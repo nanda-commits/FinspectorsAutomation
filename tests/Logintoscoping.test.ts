@@ -6,7 +6,7 @@ import ScopingPage from "../pageObject/scopingpage";
 import SamplingPage from "../pageObject/samplingpage";
 
 test('Login page to scoping', async ({ page }) => {
-  test.setTimeout(1200000);
+  test.setTimeout(100000);
 
   const materialityPage = new MaterialityPage(page);
   const loginPage = new LoginPage(page);
@@ -18,7 +18,7 @@ test('Login page to scoping', async ({ page }) => {
   await loginPage.login('nanda+04@finspectors.ai', 'Brave@3333');
 
   const clientName = "Git Inc";
-  const engagementName = "Testing 1";
+  const engagementName = "Testing 2";
   await materialityPage.selectClient(clientName, engagementName);
   await materialityPage.openMateriality();
   //Unsupervised Data set 2 - Linkeded Workpaper col.xlsx
