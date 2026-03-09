@@ -31,14 +31,14 @@ test('Login page to scoping', async ({ page }) => {
   const glFileName = "GL Data set 1 for SPPIN - FY 21-22 workpaper.xlsx";
   const tbFileName = "TB set 1 for SPPIN - FY 21-22 workpaper.xlsx";
   const uploadFilePath =
-    "C:/Users/nanda/Downloads/GL Data set 1 for SPPIN - FY 21-22 workpaper.xlsx";
+    "./tests/fixtures/GL Data set 1 for SPPIN - FY 21-22 workpaper.xlsx";
   await materialityPage.uploadGeneralLedger(
     uploadFilePath,
     glFileName
   );
 
   const uploadFilePath2 =
-    "C:/Users/nanda/Downloads/TB set 1 for SPPIN - FY 21-22 workpaper.xlsx";
+    "./tests/fixtures/TB set 1 for SPPIN - FY 21-22 workpaper.xlsx";
   await materialityPage.uploadTrialBalance(
     uploadFilePath2,
     tbFileName
