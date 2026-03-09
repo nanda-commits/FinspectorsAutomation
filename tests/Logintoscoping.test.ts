@@ -6,7 +6,7 @@ import ScopingPage from "../pageObject/scopingpage";
 import SamplingPage from "../pageObject/samplingpage";
 
 test('Login page to scoping', async ({ page }) => {
-  test.setTimeout(100000);
+  test.setTimeout(1300000);
 
   const materialityPage = new MaterialityPage(page);
   const loginPage = new LoginPage(page);

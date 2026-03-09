@@ -129,12 +129,12 @@ await applyButton.click().catch(async () => {
   }
 
   async waitForValidationComplete() {
-    const runningHeading = this.page.getByRole('heading', { name: /Running the Fins Brain/i }).first();
-    const isValidationStarted = await runningHeading
-      .waitFor({ state: 'visible', timeout: 10000 })
-      .then(() => true)
-      .catch(() => false);
-
+    // After: await riskAssessmentPage.waitForValidationComplete();
+if (await page.getByRole('heading', { name: /Running the Fins Brain/i }).isVisible()) {
+  const body = await page.content();
+  console.error('Validation did not complete. Page HTML:', body);
+  throw new Error('Risk assessment validation did not complete in time.');
+}
     if (isValidationStarted || (await runningHeading.isVisible().catch(() => false))) {
       await runningHeading.waitFor({ state: 'hidden', timeout: 900000 });
     }
