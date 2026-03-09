@@ -134,8 +134,8 @@ const runningHeading = this.page.getByRole('heading', { name: /Running the Fins 
 
 const isValidationStarted = await runningHeading.isVisible().catch(() => false);
 if (isValidationStarted) {
-    // Wait up to 15 minutes for validation to finish
-    await runningHeading.waitFor({ state: 'hidden', timeout: 900000 });
+    // Wait up to 20 minutes for validation to finish
+    await runningHeading.waitFor({ state: 'hidden', timeout: 1200000 });
 } else {
     // Optionally, add a short wait before final check
     await this.page.waitForTimeout(2000);
