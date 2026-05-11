@@ -1,0 +1,364 @@
+<testsuites id="" name="" tests="8" failures="0" skipped="0" errors="8" time="76.21207">
+<testsuite name="login.test.js" timestamp="2026-05-07T11:55:21.273Z" hostname="chromium" tests="8" failures="0" skipped="0" time="286.862" errors="8">
+<testcase name="Login Test Suite › TC01 - Valid Login" classname="login.test.js" time="47.295">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC01---Valid-Login-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC01---Valid-Login-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › login.test.js:31:3 › Login Test Suite › TC01 - Valid Login ──────────────────────────
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+      24 | test.describe('Login Test Suite', () => {
+      25 |
+    > 26 |   test.beforeEach(async ({ page }) => {
+         |        ^
+      27 |     const loginPage = new LoginPage(page);
+      28 |     await loginPage.navigate();
+      29 |   });
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:26:8
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC01---Valid-Login-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC01---Valid-Login-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Login Test Suite › TC02 - Invalid Password" classname="login.test.js" time="48.738">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC02---Invalid-Password-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC02---Invalid-Password-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › login.test.js:38:3 › Login Test Suite › TC02 - Invalid Password ─────────────────────
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+      24 | test.describe('Login Test Suite', () => {
+      25 |
+    > 26 |   test.beforeEach(async ({ page }) => {
+         |        ^
+      27 |     const loginPage = new LoginPage(page);
+      28 |     await loginPage.navigate();
+      29 |   });
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:26:8
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC02---Invalid-Password-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC02---Invalid-Password-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Login Test Suite › TC03 - Invalid Email" classname="login.test.js" time="36.175">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC03---Invalid-Email-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC03---Invalid-Email-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC03---Invalid-Email-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › login.test.js:45:3 › Login Test Suite › TC03 - Invalid Email ────────────────────────
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+      24 | test.describe('Login Test Suite', () => {
+      25 |
+    > 26 |   test.beforeEach(async ({ page }) => {
+         |        ^
+      27 |     const loginPage = new LoginPage(page);
+      28 |     await loginPage.navigate();
+      29 |   });
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:26:8
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC03---Invalid-Email-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC03---Invalid-Email-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC03---Invalid-Email-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Login Test Suite › TC04 - Empty Fields" classname="login.test.js" time="49.479">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC04---Empty-Fields-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC04---Empty-Fields-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › login.test.js:53:3 › Login Test Suite › TC04 - Empty Fields ─────────────────────────
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+      24 | test.describe('Login Test Suite', () => {
+      25 |
+    > 26 |   test.beforeEach(async ({ page }) => {
+         |        ^
+      27 |     const loginPage = new LoginPage(page);
+      28 |     await loginPage.navigate();
+      29 |   });
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:26:8
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC04---Empty-Fields-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC04---Empty-Fields-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Login Test Suite › TC05 - Only Email Entered" classname="login.test.js" time="49.27">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC05---Only-Email-Entered-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC05---Only-Email-Entered-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › login.test.js:61:3 › Login Test Suite › TC05 - Only Email Entered ───────────────────
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+      24 | test.describe('Login Test Suite', () => {
+      25 |
+    > 26 |   test.beforeEach(async ({ page }) => {
+         |        ^
+      27 |     const loginPage = new LoginPage(page);
+      28 |     await loginPage.navigate();
+      29 |   });
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:26:8
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC05---Only-Email-Entered-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC05---Only-Email-Entered-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Login Test Suite › TC06 - Only Password Entered" classname="login.test.js" time="42.356">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC06---Only-Password-Entered-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC06---Only-Password-Entered-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › login.test.js:69:3 › Login Test Suite › TC06 - Only Password Entered ────────────────
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+      24 | test.describe('Login Test Suite', () => {
+      25 |
+    > 26 |   test.beforeEach(async ({ page }) => {
+         |        ^
+      27 |     const loginPage = new LoginPage(page);
+      28 |     await loginPage.navigate();
+      29 |   });
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:26:8
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC06---Only-Password-Entered-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC06---Only-Password-Entered-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Login Test Suite › TC07 - Remember Me Functionality" classname="login.test.js" time="6.3">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC07---Remember-Me-Functionality-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC07---Remember-Me-Functionality-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="page.goto: Target page, context or browser has been closed" type="Error">
+<![CDATA[  [chromium] › login.test.js:77:3 › Login Test Suite › TC07 - Remember Me Functionality ────────────
+
+    Error: page.goto: Target page, context or browser has been closed
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC07---Remember-Me-Functionality-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC07---Remember-Me-Functionality-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Login Test Suite › TC08 - Forgot Password Navigation" classname="login.test.js" time="7.249">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC08---Forgot-Password-Navigation-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Test-Suite-TC08---Forgot-Password-Navigation-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="page.goto: Target page, context or browser has been closed" type="Error">
+<![CDATA[  [chromium] › login.test.js:86:3 › Login Test Suite › TC08 - Forgot Password Navigation ───────────
+
+    Error: page.goto: Target page, context or browser has been closed
+    Call log:
+      - navigating to "https://stage.finspectors.ai/", waiting until "load"
+
+
+       at ..\pageObject\loginpage.js:20
+
+      18 |
+      19 |   async navigate() {
+    > 20 |     await this.page.goto(process.env.URL); // replace with actual URL
+         |                     ^
+      21 |   }
+      22 |
+      23 |   async login(email, password) {
+        at LoginPage.navigate (C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\pageObject\loginpage.js:20:21)
+        at C:\Users\nanda\OneDrive\Desktop\FinspectorsAutomation-feature-introduce-best-practices\tests\login.test.js:28:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Test-Suite-TC08---Forgot-Password-Navigation-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Test-Suite-TC08---Forgot-Password-Navigation-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>

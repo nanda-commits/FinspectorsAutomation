@@ -1,0 +1,106 @@
+name: Finspector Automation
+
+on:
+  push:
+    branches: [ main, master, integration, feature/*]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run pipeline on'
+        required: true
+        default: 'main'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  CI: true
+
+jobs:
+  # Optimized into a single workflow flow to avoid redundant installs
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.58.0-jammy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          # Uses manual input branch, otherwise defaults to the branch that triggered the push
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        # Changed to 'install' to bypass the lockfile sync error you encountered
+        run: npm install 
+
+      - name: Prepare folders
+        run: mkdir -p screenshots allure-results
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Start Xvfb
+        run: Xvfb :99 -screen 0 1280x1024x24 &
+
+      - name: Run tests
+        env:
+          DISPLAY: :99
+          BASE_URL: ${{ secrets.BASE_URL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: npm run smoke-test
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-artifacts
+          path: |
+            screenshots/
+            allure-results/
+            playwright-report/
+
+  deploy:
+    name: Deploy Reports
+    needs: test
+    if: always() # Deploy reports even if tests fail
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download results
+        uses: actions/download-artifact@v4
+        with:
+          name: test-artifacts
+
+      - name: Install Allure
+        run: |
+          sudo apt-get update && sudo apt-get install -y default-jre wget unzip
+          ALLURE_VERSION=2.27.0
+          wget https://github.com/allure-framework/allure2/releases/download/${ALLURE_VERSION}/allure-${ALLURE_VERSION}.zip
+          unzip allure-${ALLURE_VERSION}.zip
+          sudo mv allure-${ALLURE_VERSION} /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+
+      - name: Generate report
+        run: allure generate allure-results -o allure-report --clean
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: allure-report
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

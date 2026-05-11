@@ -1,0 +1,27 @@
+{
+  "name": "finspectorsautomation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "smoke-test":"npx playwright test -g \"@smoke\" --headed",
+    "report:generate": "allure generate allure-results -o allure-report --clean",
+    "report:open": "allure open allure-report",
+    "debug":"npx playwright test --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.3.5",
+    "allure-playwright": "^3.7.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.9.4"
+  }
+  
+}
